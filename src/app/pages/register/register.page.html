@@ -1,0 +1,24 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="title">
+    <h4>Criar cadastro</h4>
+    <p>crie sua conta para ter acesso.</p>
+  </div>
+
+  <ion-input placeholder="Nome completo" class="primary-input"></ion-input>
+  <ion-input placeholder="Usuário" class="primary-input"></ion-input>
+  <ion-input placeholder="Senha" type="password" class="primary-input"></ion-input>
+
+  <p>Ao se cadastrar você concoda com os termos e condições.</p>
+
+  <div class="ion-margin-top">
+    <ion-button expand="block" (click)="register()">Criar cadastro</ion-button>
+  </div>
+
+  <div class="ion-margin-top ion-text-right">
+    <a (click)="dismiss()">Fechar</a>
+  </div>
+</ion-content>

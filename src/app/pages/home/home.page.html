@@ -1,9 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding ion-text-center"  color="">
+  <h1 class="ion-padding">Dev. Móvel</h1>
+  <img src="../../../assets/img/boss.png" alt="">
+  <div class="title">
+    <h2>Bem-vindo</h2>
+    <p>app desenvolvido por:</p>
+    <p>
+      <a href="https://github.com/juliojc12" color="white" target="_blank">Julio Cesar</a> ||
+      <a href="https://github.com/Askanin" target="_blank">Felipe Lima</a> ||
+      <a href="https://github.com/juliojc12" target="_blank">Joelyne França</a>
+    </p>
+  </div>
 
+  <div class="margin-top">
+    <ion-button expand="block" class="ion-margin-top"  (click)="register()" fill="outline" color="white">Registrar-se</ion-button>
+    <ion-button expand="block" class="ion-margin-top" (click)="login()" color="white">
+     Fazer login
+    </ion-button>
+  </div>
 </ion-content>
