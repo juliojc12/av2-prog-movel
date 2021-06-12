@@ -9,8 +9,8 @@
   </div>
 
   <ion-input placeholder="Nome completo" class="primary-input"></ion-input>
-  <ion-input placeholder="Usuário" class="primary-input"></ion-input>
-  <ion-input placeholder="Senha" type="password" class="primary-input"></ion-input>
+  <ion-input placeholder="Email completo" class="primary-input" [(ngModel)]="userRegister.email"></ion-input>
+  <ion-input placeholder="Senha" type="password" class="primary-input" [(ngModel)]="userRegister.password"></ion-input>
 
   <p>Ao se cadastrar você concoda com os termos e condições.</p>
 

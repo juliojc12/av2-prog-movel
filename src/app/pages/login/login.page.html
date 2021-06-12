@@ -8,8 +8,8 @@
     <p>acessar sua conta.</p>
   </div>
 
-  <ion-input placeholder="Usuário" class="primary-input"></ion-input>
-  <ion-input placeholder="Senha" class="primary-input" type="password"></ion-input>
+  <ion-input placeholder="Email" class="primary-input" [(ngModel)]="userLogin.email"></ion-input>
+  <ion-input placeholder="Senha" class="primary-input" type="password" [(ngModel)]="userLogin.password"></ion-input>
 
   <div class="ion-margin-top ion-text-right forget">
     <a> Esqueceu sua senha?</a>

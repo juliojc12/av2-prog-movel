@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { LoadingController, ModalController, ToastController } from '@ionic/angular';
+import { User } from 'src/app/interfaces/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -8,16 +11,51 @@ import { ModalController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
 
+  public userRegister: User ={};
+  public loading: any;
+  
   constructor(
+    private router: Router,
     public modalCtrl: ModalController,
+    private loadingController: LoadingController,
+    private toastController: ToastController,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
   }
 
-  async register(){
-    return
+  async register() {
+    await this.presentLoading();
+    console.log();
+    try {
+      await this.authService.register(this.userRegister)
+      this.router.navigate(['/main']);
+      
+    } catch (error) {
+      this.presentToast(error.message);
+    }
+    finally {
+      this.modalCtrl.dismiss();
+    }
   }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      message: 'Carregando...',
+      duration: 2000,
+    });
+    return this.loading.present();
+  }
+
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+    });
+    toast.present();
+  }
+
 
   async dismiss() {
     return await this.modalCtrl.dismiss();
