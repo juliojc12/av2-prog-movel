@@ -34,6 +34,10 @@ export class MainPage implements OnInit {
     this.productsSubscription.unsubscribe();
   }
 
+  map(){
+    this.router.navigate(['/map'])
+  }
+
   async logout() {
     await this.presentLoading();
     try {

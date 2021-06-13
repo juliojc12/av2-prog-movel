@@ -34,10 +34,10 @@ export class RegisterPage implements OnInit {
       
     } catch (error) {
       this.presentToast(error.message);
+      this.userRegister.email = "";
+      this.userRegister.password = "";
     }
-    finally {
-      this.modalCtrl.dismiss();
-    }
+    
   }
 
   async presentLoading() {
@@ -52,6 +52,7 @@ export class RegisterPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message,
+      duration: 2000
     });
     toast.present();
   }
