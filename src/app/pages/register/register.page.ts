@@ -27,7 +27,7 @@ export class RegisterPage implements OnInit {
 
   async register() {
     await this.presentLoading();
-    console.log();
+    
     try {
       await this.authService.register(this.userRegister)
       this.router.navigate(['/main']);
@@ -37,7 +37,9 @@ export class RegisterPage implements OnInit {
       this.userRegister.email = "";
       this.userRegister.password = "";
     }
-    
+    finally{
+      this.modalCtrl.dismiss();
+    }
   }
 
   async presentLoading() {
